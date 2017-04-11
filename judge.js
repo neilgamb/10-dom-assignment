@@ -1,25 +1,25 @@
 
 let people = [
     { name: 'John', pic: "https://randomuser.me/api/portraits/men/18.jpg" },
-    { name: 'bill', pic: "https://randomuser.me/api/portraits/men/90.jpg" },
-    { name: 'jack', pic: "https://randomuser.me/api/portraits/men/22.jpg" },
-    { name: 'danny', pic: "https://randomuser.me/api/portraits/men/25.jpg" },
-    { name: 'bob', pic: "https://randomuser.me/api/portraits/men/42.jpg" },
-    { name: 'frank', pic: "https://randomuser.me/api/portraits/men/58.jpg" },
-    { name: 'dave', pic: "https://randomuser.me/api/portraits/men/3.jpg" },
-    { name: 'ron', pic: "https://randomuser.me/api/portraits/men/2.jpg" },
-    { name: 'matt', pic: "https://randomuser.me/api/portraits/men/0.jpg" },
-    { name: 'nate', pic: "https://randomuser.me/api/portraits/men/26.jpg" },
-    { name: 'jill', pic: "https://randomuser.me/api/portraits/women/1.jpg" },
-    { name: 'jane', pic: "https://randomuser.me/api/portraits/women/72.jpg" },
-    { name: 'jessica', pic: "https://randomuser.me/api/portraits/women/92.jpg" },
-    { name: 'melissa', pic: "https://randomuser.me/api/portraits/women/82.jpg" },
-    { name: 'maggie', pic: "https://randomuser.me/api/portraits/women/38.jpg" },
-    { name: 'beth', pic: "https://randomuser.me/api/portraits/women/84.jpg" },
-    { name: 'lizzy', pic: "https://randomuser.me/api/portraits/women/85.jpg" },
-    { name: 'nancy', pic: "https://randomuser.me/api/portraits/women/40.jpg" },
-    { name: 'amy', pic: "https://randomuser.me/api/portraits/women/52.jpg" },
-    { name: 'kate', pic: "https://randomuser.me/api/portraits/women/9.jpg" },
+    { name: 'Bill', pic: "https://randomuser.me/api/portraits/men/90.jpg" },
+    { name: 'Jack', pic: "https://randomuser.me/api/portraits/men/22.jpg" },
+    { name: 'Danny', pic: "https://randomuser.me/api/portraits/men/25.jpg" },
+    { name: 'Bob', pic: "https://randomuser.me/api/portraits/men/42.jpg" },
+    { name: 'Frank', pic: "https://randomuser.me/api/portraits/men/58.jpg" },
+    { name: 'Dave', pic: "https://randomuser.me/api/portraits/men/3.jpg" },
+    { name: 'Ron', pic: "https://randomuser.me/api/portraits/men/2.jpg" },
+    { name: 'Matt', pic: "https://randomuser.me/api/portraits/men/0.jpg" },
+    { name: 'Nate', pic: "https://randomuser.me/api/portraits/men/26.jpg" },
+    { name: 'Jill', pic: "https://randomuser.me/api/portraits/women/1.jpg" },
+    { name: 'Jane', pic: "https://randomuser.me/api/portraits/women/72.jpg" },
+    { name: 'Jessica', pic: "https://randomuser.me/api/portraits/women/92.jpg" },
+    { name: 'Melissa', pic: "https://randomuser.me/api/portraits/women/82.jpg" },
+    { name: 'Maggie', pic: "https://randomuser.me/api/portraits/women/38.jpg" },
+    { name: 'Beth', pic: "https://randomuser.me/api/portraits/women/84.jpg" },
+    { name: 'Lizzy', pic: "https://randomuser.me/api/portraits/women/85.jpg" },
+    { name: 'Nancy', pic: "https://randomuser.me/api/portraits/women/40.jpg" },
+    { name: 'Amy', pic: "https://randomuser.me/api/portraits/women/52.jpg" },
+    { name: 'Kate', pic: "https://randomuser.me/api/portraits/women/9.jpg" },
 ]
 
 function init() {
@@ -38,7 +38,6 @@ function init() {
 
         let pic = document.createElement("IMG");
         pic.src = people[i].pic;
-        pic.height = 250;
 
         let btnLike = document.createElement('button');
         btnLike.textContent = 'Like';
@@ -55,17 +54,22 @@ function init() {
 
         btnLike.addEventListener('click', function () {
             console.log("You liked " + people[i].name);
+            btnLike.disabled = true;
+            btnNope.disabled = true;
+            pic.classList.add('fade');
             i++;
             next();
         })
 
         btnNope.addEventListener('click', function () {
             console.log("You noped " + people[i].name);
+            btnLike.disabled = true;
+            btnNope.disabled = true;
+            pic.classList.add('fade');
             i++;
             next();
 
         })
-
     }
 
     next();

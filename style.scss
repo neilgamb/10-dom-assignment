@@ -3,28 +3,62 @@ header {
     font-family: Roboto;
     font-weight: 200;
     font-size: 2.2em;
+    color: white;
 }
 
 li {
     opacity: 1%;
     display: inline-block;
     padding: 10px;
+    width: 15%;
+}
+
+$body-color:   lightgray;
+$light-color:  #FFFFFF;
+$dark-color:   #000000;
+$accent-color: #B7E9FF;
+
+body {
+  background: $body-color;
 }
 
 button {
-    display: inline-block;
-    margin-top: 20px;
-    width: 50%;
+  margin: 10px;
+  width: 40%;
+  background: $light-color;
+  border: 0;
+  font-size: .8rem;
+  font-family: Roboto;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0px 2px 0px rgba($dark-color,.1);
+  outline: none;
+  
+  &:hover {
+    color: darken($accent-color, 10%);
+    transform: scale(1.2);
+    
+    span {
+      opacity: 1;
+      transition: all .2s ease-in-out;
+    }
+  }
+  
+  
 }
 
 img {
     width: 100%;
     border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba($dark-color,.2);
 }
 
 p {
     text-align: center;
     font-family: Roboto;
+    color: white;
+    font-size: 1.5em;
 }
 
 h1 {
@@ -38,4 +72,8 @@ ul {
 
 .fade {
     opacity: .5;
+}
+
+span {
+    color: red;
 }

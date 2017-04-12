@@ -22,9 +22,11 @@ let people = [
     { name: 'Kate', pic: "https://randomuser.me/api/portraits/women/9.jpg" },
 ]
 
-function init() {
-            let i = 0;
+let liked = [];
 
+function init() {
+    
+    let i = 0;
 
     function next() {
 
@@ -57,8 +59,11 @@ function init() {
             btnLike.disabled = true;
             btnNope.disabled = true;
             pic.classList.add('fade');
+            liked.push(people[i].name);
             i++;
-            next();
+            if(i < (people.length)){
+                next();
+            }
         })
 
         btnNope.addEventListener('click', function () {
@@ -67,7 +72,9 @@ function init() {
             btnNope.disabled = true;
             pic.classList.add('fade');
             i++;
-            next();
+            if(i < (people.length)){
+                next();
+            }
 
         })
     }
@@ -76,8 +83,7 @@ function init() {
 
 }
 
-
-
+console.log(liked);
 
 window.addEventListener('load', init);
 
